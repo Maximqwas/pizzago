@@ -1,12 +1,12 @@
 import React from 'react';
-import './Header.css'; 
+import './Header.css';
+import { FiPhone } from 'react-icons/fi';
+import { FaBell } from 'react-icons/fa';
 
 function Header() {
   return (
     <header className="header">
-      <div className="header__left">
-        <img src="/logo.png" alt="PizzaGo Logo" className="header__logo" />
-      </div>
+      <img src="/logo.png" alt="Logo" className="header__logo" />
 
       <nav className="header__nav">
         <a href="#">Меню</a>
@@ -17,11 +17,10 @@ function Header() {
 
       <div className="header__right">
         <div className="header__phone">
-          <span className="phone-icon">📞</span>
+          <FiPhone className="icon" />
           <a href="tel:+380506615052">+380(50)-661-50-52</a>
         </div>
-        
-        
+        <FaBell className="icon cart-icon" />
       </div>
     </header>
   );

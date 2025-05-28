@@ -1,55 +1,50 @@
 .header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: transparent;
-    padding: 5px 40px;
-    display: flex;
-    color: white;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .header__logo {
-    width: 100px;
-    height: auto;
-    top: 23px;
-    left: 20px;
+  background-image: url('../assets/pizza-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 100px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  }
-  
-  .header__nav {
-    display: flex;
-    gap: 90px;
-  }
-  
-  .header__nav a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 40px;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .header__right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .header__phone a {
-    text-decoration: none;
-    color: black;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: 40px;
-    margin-right: 75px;
-  }
-  
-  
-  .phone-icon,
-  .cart-icon {
-    font-size: 20px;
-  }
+.header__logo {
+  width: 80px;
+  height: auto;
+}
+
+.header__nav {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.header__nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+}
+
+.header__phone a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.icon {
+  font-size: 20px;
+  color: red;
+}
