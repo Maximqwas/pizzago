@@ -1,16 +1,13 @@
 .header {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  background-color: #F8F1E7;
-  padding: 10px 40px;
+  background-image: url('../assets/pizza-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 100px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header__logo {
