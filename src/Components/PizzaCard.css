@@ -1,0 +1,233 @@
+﻿.pizza-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Кроссплатформенный фикс */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    /* Антиподсветка для мобил */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Эффект только для ПК */
+@media (hover: hover) and (pointer: fine) {
+    .pizza-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Фидбек для мобил */
+@media (hover: none) and (pointer: coarse) {
+    .pizza-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+}
+
+.pizza-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.pizza-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* Рендер для картинок */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .pizza-card:hover .pizza-image {
+        transform: scale(1.05);
+    }
+}
+
+.popular-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.pizza-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.75rem;
+}
+
+.pizza-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin: 0;
+    line-height: 1.3;
+    /* Рендер текста */
+    text-rendering: optimizeLegibility;
+}
+
+.pizza-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.pizza-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    gap: 1rem;
+}
+
+.pizza-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ff6b35;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Размер иконок для мобил */
+    min-height: 44px;
+    min-width: 44px;
+    /* Превент от выделения текста */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    /* Отклик для тыков */
+    -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
+}
+
+/* Ховер для пк */
+@media (hover: hover) and (pointer: fine) {
+    .add-to-cart-btn:hover {
+        background: linear-gradient(135deg, #e55a2b, #e57a32);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+    }
+}
+
+/* Эффекты для мобил */
+@media (hover: none) and (pointer: coarse) {
+    .add-to-cart-btn:active {
+        background: linear-gradient(135deg, #e55a2b, #e57a32);
+        transform: scale(0.95);
+        transition: all 0.1s ease;
+    }
+}
+
+.add-to-cart-btn:focus {
+    outline: 2px solid #ff6b35;
+    outline-offset: 2px;
+}
+
+/* Допатный брейкпоинт */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .pizza-content {
+        padding: 1rem;
+    }
+
+    .pizza-name {
+        font-size: 1.1rem;
+    }
+
+    .add-to-cart-btn {
+        padding: 0.7rem 1.1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Мобильный брейкпоинт */
+@media (max-width: 768px) {
+    .pizza-card {
+        border-radius: 8px;
+    }
+
+    .pizza-image-container {
+        height: 180px;
+    }
+
+    .pizza-content {
+        padding: 1rem;
+        gap: 0.6rem;
+    }
+
+    .pizza-name {
+        font-size: 1.1rem;
+    }
+
+    .pizza-description {
+        font-size: 0.85rem;
+        -webkit-line-clamp: 2;
+    }
+
+    .pizza-footer {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Брейк для меньших мобильников */
+@media (max-width: 480px) {
+    .pizza-image-container {
+        height: 160px;
+    }
+
+    .pizza-content {
+        padding: 0.8rem;
+    }
+
+    .pizza-name {
+        font-size: 1rem;
+    }
+
+    .pizza-price {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+}
