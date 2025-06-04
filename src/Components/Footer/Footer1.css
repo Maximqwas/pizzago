@@ -1,10 +1,10 @@
 ﻿.footer {
-    background-color: #2c2c2c;
-    color: #ffffff;
-    padding: 2rem 1rem;
-    margin-top: auto;
-    text-align: center;
-    border-top: 3px solid #ff6b35;
+    background-image: url('src/assets/footer.jpg');
+    background-size: cover;           /* or 'contain', '100%', etc. */
+    background-position: center;      /* or 'top', 'bottom', '50% 50%', etc. */
+    background-repeat: no-repeat;
+    background-attachment: fixed;     /* optional: creates parallax effect */
+    min-height: 200px;               /* ensure footer has minimum height */
     /* Фикс кроссплатформы */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -23,14 +23,14 @@
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    justify-content: right;
+    gap: 1rem;
     margin-top: 1rem;
     flex-wrap: wrap;
 }
 
 .social-links a {
-    color: #ffffff;
+    color: black;
     text-decoration: none;
     font-weight: 500;
     padding: 0.75rem 1.25rem;
