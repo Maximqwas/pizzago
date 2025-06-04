@@ -1,7 +1,8 @@
+
 function Drinks() {
   return (
     <div className="drinks">
-      
+    
     </div>
   );
 }
