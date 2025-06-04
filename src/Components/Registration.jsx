@@ -10,7 +10,6 @@ const Registration = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -37,13 +36,11 @@ const Registration = () => {
     } else {
       console.log('Регистрация прошла успешно!', formData);
       localStorage.setItem('isRegistered', 'true');
-      navigate('/orders');
+      localStorage.setItem('userName', formData.name);
+      navigate('/profile');
     }
   };
 
-  if (submitted) {
-    return <div className="success-message">Вы успешно зарегистрированы!</div>;
-  }
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
