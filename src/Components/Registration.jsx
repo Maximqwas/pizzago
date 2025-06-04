@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Registration.css'; // подключение CSS
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const Registration = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -34,7 +36,8 @@ const Registration = () => {
       setErrors(validationErrors);
     } else {
       console.log('Регистрация прошла успешно!', formData);
-      setSubmitted(true);
+      localStorage.setItem('isRegistered', 'true');
+      navigate('/orders');
     }
   };
 

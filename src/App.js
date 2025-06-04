@@ -9,8 +9,12 @@ import Registration from './Components/Registration';
 import Home from './Components/Home';
 import Pizza from './Components/Pizza';
 import Drinks from './Components/Drinks';
+import OrderHistory from './Components/OrderHistory';
+import Profile from './Components/Profile';
 
 function App() {
+  const isRegistered = localStorage.getItem('isRegistered') === 'true';
+
   return (
     <div className="App">
       <Routes>
@@ -21,6 +25,8 @@ function App() {
           <Route path="registration" element={<Registration />} />
           <Route path="promotion" element={<Promotion />} />
           <Route path="delivery" element={<Delivery />} />
+          <Route path="orders" element={<OrderHistory />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
       </Routes>
     </div>

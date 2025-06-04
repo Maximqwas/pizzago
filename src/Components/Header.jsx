@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { FiPhone } from 'react-icons/fi';
 import { FaBell } from 'react-icons/fa';
-import {NavLink} from "react-router-dom"; 
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from "react-router-dom";
 
 function Header() {
+
+  const [isRegistered, setIsRegistered] = useState(false);
+
+  useEffect(() => {
+    const flag = localStorage.getItem('isRegistered') === 'true';
+    setIsRegistered(flag);
+  }, []);
+
   return (
     <header className="header">
-     <Link to="/">
-      <img src="/logo.png" alt="Logo" className="header__logo" />
-     </Link> 
+      <Link to="/">
+        <img src="/logo.png" alt="Logo" className="header__logo" />
+      </Link>
       <nav className="header__nav">
         <div className="dropdown">
           <span className="nav-item">Меню</span>
@@ -19,9 +26,13 @@ function Header() {
             <Link to="/menu/drinks">Напої</Link>
           </div>
         </div>
-        <NavLink to = "/registration">Реєстрація</NavLink>
-        <NavLink to = "/promotion">Акції</NavLink>
-        <NavLink to = "/delivery">Доставка та оплата</NavLink>
+        {isRegistered ? (
+          <NavLink to="/profile">Профіль</NavLink>
+        ) : (
+          <NavLink to="/registration">Реєстрація</NavLink>
+        )}
+        <NavLink to="/promotion">Акції</NavLink>
+        <NavLink to="/delivery">Доставка та оплата</NavLink>
       </nav>
 
       <div className="header__right">
