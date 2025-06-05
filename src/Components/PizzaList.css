@@ -1,0 +1,11 @@
+.pizza-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pizza-list> :last-child {
+    grid-column: 2 / 3;
+}
