@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./PizzaCard.css";
 
 const PizzaCard = ({ pizza, onOrder }) => {
-    // Если нет pizza.sizes, задаём дефолтный массив, например, [30]
-    const sizes = pizza.sizes ?? [30]; // дефолтный размер 30 см
+    const sizes = pizza.sizes ?? [30];
 
     const [selectedSize, setSelectedSize] = useState(sizes[0]);
 
