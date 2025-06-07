@@ -11,6 +11,7 @@ import Pizza from './Components/Pizza';
 import Drinks from './Components/Drinks';
 import OrderHistory from './Components/OrderHistory';
 import Profile from './Components/Profile';
+import Login from './Components/Login';
 
 function App() {
   const isRegistered = localStorage.getItem('isRegistered') === 'true';
@@ -27,6 +28,7 @@ function App() {
           <Route path="delivery" element={<Delivery />} />
           <Route path="orders" element={<OrderHistory />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </div>
