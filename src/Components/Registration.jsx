@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
     password: '',
     remember: false,
@@ -15,6 +14,7 @@ const Registration = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
@@ -22,7 +22,6 @@ const Registration = () => {
   };
 
   const validate = () => {
-    if (!formData.name.trim()) return 'Введіть імʼя';
     if (!formData.email.includes('@')) return 'Некоректний email';
     if (formData.password.length < 6) return 'Пароль має бути щонайменше 6 символів';
     return '';
@@ -41,7 +40,6 @@ const Registration = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: formData.name,
           email: formData.email,
           password: formData.password,
         }),
@@ -49,7 +47,8 @@ const Registration = () => {
 
       if (res.ok) {
         // Успешная регистрация
-        localStorage.setItem('userName', formData.name);
+        localStorage.setItem('userName', 'Користувач'); // Тут можна зберегти ім'я користувача, якщо сервер повертає його
+        localStorage.setItem('isRegistered', 'true');
         navigate('/profile');
       } else {
         const err = await res.json();
@@ -63,16 +62,6 @@ const Registration = () => {
   return (
     <form className="registration-form" onSubmit={handleSubmit}>
       <h2 className="form-title">Реєстрація</h2>
-
-      <input
-        type="text"
-        name="name"
-        placeholder="Ім’я"
-        className="form-input"
-        value={formData.name}
-        onChange={handleChange}
-        required
-      />
 
       <input
         type="email"

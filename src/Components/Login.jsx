@@ -94,7 +94,7 @@ const Login = () => {
             <button type="submit" className="form-button">Увійти</button>
 
             <div className="form-footer">
-                <a href="/forgot-password">Забули пароль?</a>
+                <a href="/registration">Зареєструватися</a>
             </div>
         </form>
     );
