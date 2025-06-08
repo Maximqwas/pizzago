@@ -1,10 +1,31 @@
 import React, { useState } from "react";
 import "./PizzaCard.css";
 
-const PizzaCard = ({ pizza, onOrder }) => {
+const PizzaCard = ({ pizza }) => {
     const sizes = pizza.sizes ?? [30];
 
     const [selectedSize, setSelectedSize] = useState(sizes[0]);
+
+    const handleOrder = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const price = Number(pizza.prices?.[selectedSize] ?? pizza.price ?? 0);
+
+    const item = {
+      pizzaId: pizza.id,
+      name: pizza.name,
+      size: selectedSize,
+      quantity: 1,
+      unitPrice: price,
+      totalPrice: price,
+    };
+
+    // Добавим в корзину (можно улучшить: объединять одинаковые пиццы)
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Піца додана до кошика!");
+  };
 
     return (
         <div className="pizza-card">
@@ -32,7 +53,7 @@ const PizzaCard = ({ pizza, onOrder }) => {
 
             <button
                 className="order-button"
-                onClick={() => onOrder(pizza, selectedSize)}
+                onClick={handleOrder}
             >
                 Замовити
             </button>
