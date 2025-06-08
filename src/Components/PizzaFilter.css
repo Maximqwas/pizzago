@@ -1,0 +1,47 @@
+.pizza-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+  flex-direction: row;
+  flex-shrink: 0;
+  overflow-x: auto;
+  padding: 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.pizza-filter::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 2px solid #d97706;
+  background: white;
+  color: #d97706;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-button.active,
+.filter-button:hover {
+  background-color: #d97706;
+  color: white;
+}
+
+
+/* Адаптив для очень узких экранов */
+@media (max-width: 480px) {
+  .pizza-filter {
+    justify-content: flex-start;
+  }
+
+  .filter-button {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}

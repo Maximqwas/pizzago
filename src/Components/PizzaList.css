@@ -6,6 +6,6 @@
     margin: 0 auto;
 }
 
-.pizza-list> :last-child {
-    grid-column: 2 / 3;
+.pizza-list.center-last > :last-child:nth-child(odd):nth-last-child(1) {
+  grid-column: 2 / 3;
 }

@@ -1,0 +1,11 @@
+.drinks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.drinks img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
