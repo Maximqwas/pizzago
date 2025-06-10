@@ -4,7 +4,7 @@
     margin-bottom: 1px;
     font-weight: bold;
     padding: 60px;
-    background-image: url('../assets/footer-bg.jpg');
+    background-image: url('../../assets/footer-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,7 +57,7 @@
 
 .footer-info-center a {
     color: black;
-    text-decoration: none ;
+    text-decoration: none;
     padding: 5px 0;
     transition: color 0.3s ease, transform 0.2s ease;
     text-align: left;
