@@ -1,14 +1,14 @@
 import React from 'react';
 import Slider from './Slider';
-import PizzaList from './PizzaList';
+import PizzaList from '../pizza/PizzaList';
 import './Home.css';
 
 function Home() {
   return (
     <div className="home">
       <Slider />
-      <PizzaList limit={7} withFilter={false} centerLast={true}/>
-       <div className="home-description">
+      <PizzaList limit={7} withFilter={false} centerLast={true} />
+      <div className="home-description">
         <p>
           Ласкаво просимо до <strong>PizzaGo</strong> — твоя улюблена піцерія онлайн!
           Обирай свою ідеальну піцу з нашого меню

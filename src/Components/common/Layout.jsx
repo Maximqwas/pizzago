@@ -1,5 +1,5 @@
-import "../App.css";
-import { Outlet} from "react-router-dom"; 
+import "../../App.css";
+import { Outlet } from "react-router-dom";
 import Header from './Header';
 
 
@@ -10,7 +10,7 @@ function Layout() {
       <main >
         <Outlet />
       </main>
-      
+
     </>
   );
 }

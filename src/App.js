@@ -2,16 +2,16 @@ import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 //import Menu from './Components/Menu';
-import Layout from './Components/Layout';
-import Delivery from './Components/Delivery';
-import Promotion from './Components/Promotion';
-import Registration from './Components/Registration';
-import Home from './Components/Home';
-import Pizza from './Components/Pizza';
-import Drinks from './Components/Drinks';
-import OrderHistory from './Components/OrderHistory';
-import Profile from './Components/Profile';
-import Login from './Components/Login';
+import Layout from './Components/common/Layout';
+import Delivery from './Components/delivery/Delivery';
+import Promotion from './Components/pages/Promotion';
+import Registration from './Components/auth/Registration';
+import Home from './Components/home/Home';
+import Pizza from './Components/pages/Pizza';
+import Drinks from './Components/pages/Drinks';
+import OrderHistory from './Components/profile/OrderHistory';
+import Profile from './Components/profile/Profile';
+import Login from './Components/auth/Login';
 
 function App() {
   const isRegistered = localStorage.getItem('isRegistered') === 'true';
