@@ -1,5 +1,5 @@
 import './Baner.css';
-import background from '../assets/pizza-bg.jpg';
+import background from '../../assets/pizza-bg.jpg';
 import { FaConciergeBell } from "react-icons/fa";
 
 function Baner() {

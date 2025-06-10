@@ -1,9 +1,9 @@
 import React from 'react';
 import './Promotion.css';
 
-import promo1 from '../assets/promo1.jpg';
-import promo2 from '../assets/promo2.jpg';
-import promo3 from '../assets/promo3.jpg';
+import promo1 from '../../assets/promo1.jpg';
+import promo2 from '../../assets/promo2.jpg';
+import promo3 from '../../assets/promo3.jpg';
 
 function Promotion() {
   return (

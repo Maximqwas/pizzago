@@ -1,5 +1,5 @@
 .header {
-  background-image: url('../assets/pizza-bg.jpg');
+  background-image: url('../../assets/pizza-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -52,6 +52,7 @@
 .dropdown {
   position: relative;
 }
+
 .nav-item {
   text-decoration: none;
   color: black;
@@ -65,12 +66,13 @@
   position: absolute;
   top: 28px;
   left: 0;
-  background-color: #fff4e6; /* светлый беж */
+  background-color: #fff4e6;
+  /* светлый беж */
   min-width: 130px;
   max-width: 200px;
   width: max-content;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   z-index: 1;
   flex-direction: column;
   padding: 5px 0;

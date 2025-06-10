@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import profileIcon from '../assets/Profile_icon.jpg'; // убедись, что файл в src/assets/
+import profileIcon from '../../assets/Profile_icon.jpg';
 
 function Profile() {
     const [userName, setUserName] = useState('');
