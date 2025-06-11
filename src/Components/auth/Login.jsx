@@ -33,13 +33,14 @@ const Login = () => {
         }
 
         try {
-            const res = await fetch('http://143.110.154.85:80/api/v1/auth/login', {
+            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     email: formData.email,
                     password: formData.password,
                 }),
+                credentials: 'include',
             });
 
             if (res.ok) {

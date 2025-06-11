@@ -23,7 +23,7 @@ const Registration = () => {
 
   const validate = () => {
     if (!formData.email.includes('@')) return 'Некоректний email';
-    if (formData.password.length < 6) return 'Пароль має бути щонайменше 6 символів';
+    if (formData.password.length < 8) return 'Пароль має бути щонайменше 6 символів';
     return '';
   };
 
@@ -36,13 +36,14 @@ const Registration = () => {
     }
 
     try {
-      const res = await fetch('http://143.110.154.85:80/api/v1/auth/register', {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: formData.email,
           password: formData.password,
         }),
+        credentials: 'include',
       });
 
       if (res.ok) {
