@@ -34,14 +34,46 @@ const Delivery = () => {
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const { name, value } = e.target;
+  const updatedFormData = { ...formData, [name]: value };
+  setFormData(updatedFormData);
+
+  // Мгновенная валидация при вводе
+  const newErrors = { ...errors };
+
+  if (name === "name") {
+    if (!value || /\d/.test(value)) {
+      newErrors.name = "Ім'я не повинно містити цифри і бути порожнім";
+    } else {
+      delete newErrors.name;
+    }
+  }
+
+  if (name === "phone") {
+    if (!/^\+380\d{9}$/.test(value)) {
+      newErrors.phone = "Невірний формат номера телефону";
+    } else {
+      delete newErrors.phone;
+    }
+  }
+
+  if (name === "address") {
+    if (value.length < 5) {
+      newErrors.address = "Адреса повинна містити щонайменше 5 символів";
+    } else {
+      delete newErrors.address;
+    }
+  }
+
+  setErrors(newErrors);
+ };
+ 
   const handleRemoveItem = (index) => {
   const updatedCart = [...cart];
   updatedCart.splice(index, 1);
   setCart(updatedCart);
   localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
+ };
 
   const handleSubmit = async (e) => {
   e.preventDefault();
