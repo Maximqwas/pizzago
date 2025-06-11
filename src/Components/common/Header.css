@@ -95,3 +95,17 @@
 .dropdown:hover .dropdown-content {
   display: flex;
 }
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.logout-btn:hover {
+  text-decoration: none;
+}

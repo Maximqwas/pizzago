@@ -12,9 +12,12 @@ import Drinks from './Components/pages/Drinks';
 import OrderHistory from './Components/profile/OrderHistory';
 import Profile from './Components/profile/Profile';
 import Login from './Components/auth/Login';
+import VerifyEmail from './Components/auth/VerifyEmail';
+import ResendVerification from './Components/auth/ResendVerification';
 
 function App() {
-  const isRegistered = localStorage.getItem('isRegistered') === 'true';
+  const isLoggedIn = !!localStorage.getItem('userName');
+
 
   return (
     <div className="App">
@@ -29,6 +32,8 @@ function App() {
           <Route path="orders" element={<OrderHistory />} />
           <Route path="profile" element={<Profile />} />
           <Route path="login" element={<Login />} />
+          <Route path="verify-email" element={<VerifyEmail />} />
+          <Route path="resend-verification" element={<ResendVerification />} />
         </Route>
       </Routes>
     </div>

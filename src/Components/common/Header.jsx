@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './Header.css';
 import { FiPhone } from 'react-icons/fi';
 import { FaBell } from 'react-icons/fa';
 import { NavLink, Link } from "react-router-dom";
+import { AuthContext } from '../auth/AuthContext';
 
 function Header() {
 
-  const [isRegistered, setIsRegistered] = useState(false);
-
-  useEffect(() => {
-    const flag = localStorage.getItem('isRegistered') === 'true';
-    setIsRegistered(flag);
-  }, []);
+  const { user, logout } = useContext(AuthContext);
 
   return (
     <header className="header">
@@ -26,11 +22,15 @@ function Header() {
             <Link to="/menu/drinks">Напої</Link>
           </div>
         </div>
-        {isRegistered ? (
-          <NavLink to="/profile">Профіль</NavLink>
+        {user ? (
+          <>
+            <NavLink to="/profile">Профіль</NavLink>
+            <button onClick={logout} className="logout-btn">Вийти</button>
+          </>
         ) : (
           <NavLink to="/registration">Реєстрація</NavLink>
         )}
+
         <NavLink to="/promotion">Акції</NavLink>
         <NavLink to="/delivery">Доставка та оплата</NavLink>
       </nav>

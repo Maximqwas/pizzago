@@ -44,7 +44,7 @@ const Login = () => {
 
             if (res.ok) {
                 const user = await res.json();
-                localStorage.setItem('userName', user.name || '');
+                localStorage.setItem('userName', user.user.email); // збереження email як імені
                 navigate('/profile');
             } else {
                 const err = await res.json();

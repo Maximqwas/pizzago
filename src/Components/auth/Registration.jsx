@@ -23,7 +23,8 @@ const Registration = () => {
 
   const validate = () => {
     if (!formData.email.includes('@')) return 'Некоректний email';
-    if (formData.password.length < 6) return 'Пароль має бути щонайменше 6 символів';
+    if (formData.password.length < 8) return 'Пароль має бути щонайменше 8 символів';
+
     return '';
   };
 
@@ -46,10 +47,11 @@ const Registration = () => {
       });
 
       if (res.ok) {
-        // Успешная регистрация
-        localStorage.setItem('userName', 'Користувач'); // Тут можна зберегти ім'я користувача, якщо сервер повертає його
-        localStorage.setItem('isRegistered', 'true');
-        navigate('/profile');
+        const data = await res.json();
+        alert(data.message);          // «Registration successful…»
+        navigate('/login');
+      } else if (res.status === 409) {
+        setError('Цей e-mail уже зареєстрований.');
       } else {
         const err = await res.json();
         setError(err.message || 'Помилка реєстрації');
@@ -57,6 +59,7 @@ const Registration = () => {
     } catch {
       setError('Помилка зʼєднання з сервером');
     }
+
   };
 
   return (
@@ -100,6 +103,10 @@ const Registration = () => {
       <div className="form-footer">
         <a href="/login">Вже маєте акаунт?</a>
       </div>
+      <p>
+        Не отримали листа? <a href="/resend-verification">Надіслати ще раз</a>
+      </p>
+
     </form>
   );
 };
