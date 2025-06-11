@@ -69,22 +69,47 @@ const Delivery = () => {
  };
  
   const handleRemoveItem = (index) => {
-  const updatedCart = [...cart];
-  updatedCart.splice(index, 1);
-  setCart(updatedCart);
-  localStorage.setItem("cart", JSON.stringify(updatedCart));
- };
+    const pizza = cart[index];
+    console.log("Видалення піци з кошика:", pizza);
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/cart/${pizza.pizzaId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      credentials: "include" // Update session cookie
+    })
+    .then((res) => {
+      if (!res.ok && res.status !== 404) {
+        throw new Error(res.body ? res.body : "Помилка при видаленні з кошика");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      const updatedCart = [...cart];
+      updatedCart.splice(index, 1);
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      console.log("Піца видалена з кошика:", data);
+        alert("Піца видалена з кошика!");
+    })
+    .catch((error) => {
+        console.error("Помилка:", error);
+        alert("Не вдалося видалити піцу з кошика. Спробуйте ще раз.");
+    });
+  };
 
   const handleSubmit = async (e) => {
   e.preventDefault();
   if (!validate()) return;
   console.log(JSON.parse(localStorage.getItem("cart")));
   try {
-    const response = await fetch("http://143.110.154.85:80/api/v1/orders", {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/orders`, {
       method: "POST",
       headers: {
         "Accept": "application/json"
-      }
+      },
+      credentials: "include",
     });
 
     if (!response.ok) {

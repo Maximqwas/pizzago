@@ -9,7 +9,7 @@ const PizzaList = ({ limit = 9, withFilter = false, centerLast = false }) => {
     const [activeCategory, setActiveCategory] = useState("all");
 
     useEffect(() => {
-        fetch(`http://143.110.154.85:80/api/v1/pizzas?limit=${limit}`)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/pizzas?limit=${limit}`)
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error: ${res.status}`);

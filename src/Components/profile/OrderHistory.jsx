@@ -5,11 +5,12 @@ const OrderHistory = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://143.110.154.85:80/api/v1/orders", {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/orders`, {
             method: "GET",
             headers: {
                 "Accept": "application/json"
-            }
+            },
+            credentials: 'include'
         })
             .then(res => res.json())
             .then(data => {
@@ -41,7 +42,7 @@ const OrderHistory = () => {
                         }}>
                             <strong>Заказ #{order.orderId}</strong><br />
                             Дата: {new Date(order.createdAt).toLocaleString()}<br />
-                            Сумма: ${order.total.toFixed(2)}<br />
+                            Сумма: {order.total.toFixed(2)} грн<br />
                             Статус: {order.status}
                         </li>
                     ))}
