@@ -23,7 +23,7 @@ const Registration = () => {
 
   const validate = () => {
     if (!formData.email.includes('@')) return 'Некоректний email';
-    if (formData.password.length < 8) return 'Пароль має бути щонайменше 6 символів';
+    if (formData.password.length < 8) return 'Пароль має бути щонайменше 8 символів';
     return '';
   };
 
