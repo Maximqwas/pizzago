@@ -1,27 +1,18 @@
-# 🍕 PizzaGo
-
-**PizzaGo** — це простий та адаптивний вебзастосунок для онлайн-замовлення піци. Користувач може переглядати меню, налаштовувати замовлення, додавати піци до кошика та оформляти доставку.
- 
----
-
-## 🔧 Технології
-
-- React  
-- JavaScript  
-- TailwindCSS (або CSS Modules)  
-- React Router  
-- LocalStorage (або Firebase)  
-
----
-
-## 📦 Функціонал
-
-- Перегляд меню піц з фільтрами та пошуком  
-- Вибір розміру піци та додаткових інгредієнтів  
-- Додавання товарів до кошика  
-- Оформлення замовлення через форму  
-- Підрахунок загальної суми  
-- Збереження замовлення в LocalStorage  
-- Мобільна адаптація  
-- Повідомлення про успішне замовлення  
-- (Опціонально) Реєстрація та особистий кабінет  
+🍕 PizzaGo
+PizzaGo is a simple, responsive web application for ordering pizza online. Users can browse the menu, customize orders, add pizzas to the cart, and place delivery requests.
+🔧 Tech Stack
+ * React
+ * JavaScript
+ * TailwindCSS (or CSS Modules)
+ * React Router
+ * LocalStorage (or Firebase)
+📦 Features
+ * Browse pizza menu with search and filtering
+ * Select pizza size and extra toppings
+ * Add items to cart
+ * Checkout form for placing orders
+ * Real-time total price calculation
+ * Order persistence via LocalStorage
+ * Fully responsive mobile design
+ * Order confirmation alerts
+ * (Optional) User authentication and personal profile
