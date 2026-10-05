@@ -1,18 +1,27 @@
-🍕 PizzaGo
-PizzaGo is a simple, responsive web application for ordering pizza online. Users can browse the menu, customize orders, add pizzas to the cart, and place delivery requests.
-🔧 Tech Stack
- * React
- * JavaScript
- * TailwindCSS (or CSS Modules)
- * React Router
- * LocalStorage (or Firebase)
-📦 Features
- * Browse pizza menu with search and filtering
- * Select pizza size and extra toppings
- * Add items to cart
- * Checkout form for placing orders
- * Real-time total price calculation
- * Order persistence via LocalStorage
- * Fully responsive mobile design
- * Order confirmation alerts
- * (Optional) User authentication and personal profile
+# 🍕 PizzaGo
+
+**PizzaGo** is a simple, responsive web application for ordering pizza online. Users can browse the menu, customize their orders, add pizzas to the cart, and arrange delivery.
+
+---
+
+## 🔧 Tech Stack
+
+- **React**
+- **JavaScript**
+- **TailwindCSS** (or **CSS Modules**)
+- **React Router**
+- **LocalStorage** (or **Firebase**)
+
+---
+
+## 📦 Features
+
+- **Menu Browsing:** Search bar and category filters
+- **Customization:** Pizza size selection and extra toppings
+- **Shopping Cart:** Add, remove, and update items seamlessly
+- **Checkout:** Simple form for delivery details
+- **Pricing:** Dynamic real-time total calculation
+- **Persistence:** Save cart and order history in `LocalStorage`
+- **Responsive UI:** Fully optimized for mobile, tablet, and desktop
+- **Notifications:** Order confirmation and status alerts
+- **User Accounts (Optional):** Authentication and saved order history
